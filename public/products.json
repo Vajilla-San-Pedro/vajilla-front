@@ -49,10 +49,31 @@
       "imagen":"./assets/jarraVidrio.png"
     },
     {
-      "id": "65f8640c2c852bad105e4714",
+      "id": "65f8640c2c852bad105e4715",
       "nombre": "Mantel blanco 3mts",
       "marca": "",
       "precio": 2500,
       "imagen":"./assets/mantel.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4716",
+      "nombre": "Servilletero",
+      "marca": "",
+      "precio": 300,
+      "imagen":"./assets/servilletero.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4717",
+      "nombre": "Hielera con pinza",
+      "marca": "",
+      "precio": 500,
+      "imagen":"./assets/hielera.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4718",
+      "nombre": "Panera",
+      "marca": "",
+      "precio": 450,
+      "imagen":"./assets/panera.png"
     }
 ]
