@@ -57,23 +57,69 @@
     },
     {
       "id": "65f8640c2c852bad105e4716",
+      "nombre": "Cubre manteles 75x75",
+      "marca": "",
+      "precio": 650,
+      "imagen":"./assets/manteles.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4717",
       "nombre": "Servilletero",
       "marca": "",
       "precio": 300,
       "imagen":"./assets/servilletero.png"
     },
     {
-      "id": "65f8640c2c852bad105e4717",
+      "id": "65f8640c2c852bad105e4718",
       "nombre": "Hielera con pinza",
       "marca": "",
       "precio": 500,
       "imagen":"./assets/hielera.png"
     },
     {
-      "id": "65f8640c2c852bad105e4718",
+      "id": "65f8640c2c852bad105e4719",
       "nombre": "Panera",
       "marca": "",
       "precio": 450,
       "imagen":"./assets/panera.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4720",
+      "nombre": "Cazuelita",
+      "marca": "",
+      "precio": 220,
+      "imagen":"./assets/cazuelita.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4721",
+      "nombre": "Salero",
+      "marca": "",
+      "precio": 300,
+      "imagen":"./assets/salero.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4722",
+      "nombre": "Cenicero",
+      "marca": "",
+      "precio": 220,
+      "imagen":"./assets/cenicero.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4723",
+      "nombre": "Bandeja de mozo",
+      "marca": "",
+      "precio": 600,
+      "imagen":"./assets/bandejamozo.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4724",
+      "nombre": "Fuente para servir",
+      "marca": "",
+      "precio": 600,
+      "imagen":"./assets/fuente.png"
     }
+    
+    
+    
+
 ]
