@@ -54,7 +54,7 @@ const Header = () => {
           <a
             href="https://api.whatsapp.com/send?l=es&amp;phone=5491128922795&amp;text=Lo contacto a traves del sitio web. Tengo interés en sus servicios de alquiler de vajilla."
             target="_blank"
-            className="btn btn-lg btn-primary mx-auto"
+            className="btn btn-sm bg-zinc-500 mx-auto"
           >
             Contactar
           </a>
