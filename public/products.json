@@ -1,10 +1,17 @@
 [
     {
       "id": "65f8640c2c852bad105e4709",
-      "nombre": "Plato",
+      "nombre": "Plato Principal",
       "marca": "Olmos",
       "precio": 250,
       "imagen":"./assets/platoOlmos.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4725",
+      "nombre": "Plato de postre",
+      "marca": "Olmos",
+      "precio": 200,
+      "imagen":"./assets/platopostre.png"
     },
     {
       "id": "65f8640c2c852bad105e4710",
@@ -36,9 +43,9 @@
     },    
     {
       "id": "65f8640c2c852bad105e4714",
-      "nombre": "Copa de champagne",
+      "nombre": "Copa flauta",
       "marca": "",
-      "precio": 180,
+      "precio": 200,
       "imagen":"./assets/copaChampagne.png"
     },    
     {
@@ -113,7 +120,7 @@
     },
     {
       "id": "65f8640c2c852bad105e4724",
-      "nombre": "Fuente para servir",
+      "nombre": "Bandeja de asado",
       "marca": "",
       "precio": 600,
       "imagen":"./assets/fuente.png"
