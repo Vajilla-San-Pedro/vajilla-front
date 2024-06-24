@@ -19,12 +19,15 @@ module.exports = {
       lg:'960px',
       xl:'1140px',
     },
-    extend: {},
+    extend: { 
+      colors: {
+      primary: '#0a0a0a',
+      accent: {
+        DEFAULT: '#808B96',
+        hover: '#ABB2B9',
+      },
+     },
   },
-  plugins: [
-  ],
-}
-
-  purge: [
-    './src/**/*.html',
-  ]
+},
+  plugins: [],
+};

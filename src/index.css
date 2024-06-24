@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    .btn {
+        @apply text-[15px] tracking-[3px]  uppercase text-white flex-1 transition-all px-8 flex justify-center items-center;
+      }
+      .btn-sm {
+        @apply h-[48px];
+      }
+      .btn-lg {
+        @apply h-[60px];
+      }
+      .btn-primary {
+        @apply bg-accent hover:bg-accent-hover;
+      }
+      .btn-secondary {
+        @apply bg-primary hover:bg-accent;
+      }
+      .btn-white {
+        @apply bg-white text-[#0a0a0a];
+      }
+}
