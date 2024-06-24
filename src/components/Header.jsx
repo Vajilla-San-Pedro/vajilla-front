@@ -27,7 +27,7 @@ const Header = () => {
           <img
             src={bannerImage}
             alt="Banner"
-            className="w-[30%] max-h-full object-cover"
+            className="max-w-full max-h-full object-cover"
           />
           <img
             src={bannerImage2}
