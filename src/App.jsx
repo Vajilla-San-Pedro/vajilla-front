@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import bannerImage from '../public/assets/banner.jpg'; 
 import bannerImage2 from '../public/assets/cubiertos.jpg';
 import bannerImage3 from '../public/assets/bolws.jpg'; 
-
+import bannerImage4 from '../public/assets/banner2.jpg';
 function App() {
   const [products, setProducts] = useState([]);
 
@@ -18,10 +18,14 @@ function App() {
     <>
       <Header />
 
-      <div className="relative hidden  lg:flex  w-full h-[50vh] object-cover overflow-hidden">
+    <div className="relative hidden  lg:flex  w-full h-[50vh] object-cover overflow-hidden">
       <img src={bannerImage} alt="Banner"  className="w-[30%] max-h-full object-cover" />
       <img src={bannerImage2} alt="Banner"  className="max-w-full  flex-1  max-h-full object-cover" />
       <img src={bannerImage3} alt="Banner"  className=" max-w-full  max-h-full object-cover" />
+    </div>
+
+    <div className="relative mt-4 lg:hidden  w-full h-[40vh] object-cover overflow-hidden">
+      <img src={bannerImage4} alt="Banner"  className="w-full max-h-full object-cover" />
     </div>
 
       <div className="bg-white">
