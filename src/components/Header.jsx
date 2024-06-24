@@ -1,11 +1,59 @@
 import React from "react";
+import bannerImage from "../../public/assets/banner.jpg";
+import bannerImage2 from "../../public/assets/cubiertos.jpg";
+import bannerImage3 from "../../public/assets/bolws.jpg";
+import bannerImage4 from "../../public/assets/banner2.jpg";
 
 const Header = () => {
   return (
     <>
-      <header className="bg-white flex sm:items-center sm:justify-between p-4 sm:p-6 xl:pt-8 antialiased">
-        <h1 className="font-semibold border-b-4  border-gray-200 text-black uppercase text-xs tracking-tight text-center xl:text-left ">Alquiler de vajilla y manteleria</h1>
-      </header>
+   
+   <div className="hidden relative h-full lg:flex justify-center items-center p-24">
+        <div className="z-20 text-white flex flex-col items-center justify-center">
+          <div className="uppercase text-[12px] font-tertiary tracking-[6px] mb-5">
+          Zona oeste- Isidro casanova
+          </div>
+          <h1 className="text-[32px] font-primary uppercase tracking-[2px] max-w-[920px] leading-tight mb-6">Alquiler de vajilla y manteleria</h1>
+        </div>
+        <div className="absolute top-0 w-full h-full flex">
+        <img
+          src={bannerImage}
+          alt="Banner"
+          className="w-[30%] max-h-full object-cover"
+        />
+        <img
+          src={bannerImage2}
+          alt="Banner"
+          className="max-w-full  flex-1  max-h-full object-cover"
+        />
+        <img
+          src={bannerImage3}
+          alt="Banner"
+          className=" max-w-full  max-h-full object-cover"
+        />
+
+        </div>
+        <div className="absolute w-full h-full bg-black/70"></div>
+      </div>
+
+
+      <div className="lg:hidden relative h-full flex justify-center items-center p-16">
+        <div className="z-20 text-white text-center">
+          <div className="uppercase text-[10px] font-tertiary tracking-[6px] mb-5">
+          Zona oeste- Isidro casanova
+          </div>
+          <h1 className="text-[19px] font-primary uppercase tracking-[2px] max-w-[260px] leading-tight mb-6">Alquiler de vajilla y manteleria</h1>
+        </div>
+        <div className="absolute top-0 w-full h-full">
+          <img
+            src={bannerImage4}
+            alt="Banner"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute w-full h-full bg-black/70"></div>
+      </div>
+
     </>
   );
 };
