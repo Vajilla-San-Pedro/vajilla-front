@@ -1,0 +1,58 @@
+[
+    {
+      "id": "65f8640c2c852bad105e4709",
+      "nombre": "Plato",
+      "marca": "Olmos",
+      "precio": 250,
+      "imagen":"./assets/platoOlmos.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4710",
+      "nombre": "Tenedor",
+      "marca": "Paris",
+      "precio": 160,
+      "imagen":"./assets/tenedorParis.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4711",
+      "nombre": "Cuchillo",
+      "marca": "Paris",
+      "precio": 160,
+      "imagen":"./assets/cuchilloParis.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4712",
+      "nombre": "Cuchara de postre",
+      "marca": "Paris",
+      "precio": 160,
+      "imagen":"./assets/cucharaPostre.png"
+    },    
+    {
+      "id": "65f8640c2c852bad105e4713",
+      "nombre": "Copa de agua",
+      "marca": "",
+      "precio": 180,
+      "imagen":"./assets/copaAgua.png"
+    },    
+    {
+      "id": "65f8640c2c852bad105e4714",
+      "nombre": "Copa de champagne",
+      "marca": "",
+      "precio": 180,
+      "imagen":"./assets/copaChampagne.png"
+    },    
+    {
+      "id": "65f8640c2c852bad105e4714",
+      "nombre": "Jarra de vidrio",
+      "marca": "",
+      "precio": 500,
+      "imagen":"./assets/jarraVidrio.png"
+    },
+    {
+      "id": "65f8640c2c852bad105e4714",
+      "nombre": "Mantel blanco 3mts",
+      "marca": "",
+      "precio": 2000,
+      "imagen":"./assets/mantel.png"
+    }
+]
