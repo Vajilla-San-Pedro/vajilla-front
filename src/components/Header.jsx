@@ -51,6 +51,13 @@ const Header = () => {
           <h1 className="text-[19px] font-primary uppercase tracking-[2px] max-w-[260px] leading-tight mb-6">
             Alquiler de vajilla y manteleria
           </h1>
+          <a
+            href="https://api.whatsapp.com/send?l=es&amp;phone=5491128922795&amp;text=Lo contacto a traves del sitio web. Tengo interés en sus servicios de alquiler de vajilla."
+            target="_blank"
+            className="btn btn-lg btn-primary mx-auto"
+          >
+            Contactar
+          </a>
         </div>
         <div className="absolute top-0 w-full h-full">
           <img
