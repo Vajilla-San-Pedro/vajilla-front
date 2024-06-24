@@ -30,7 +30,7 @@ function App() {
 
       <div className="bg-white">
         <div className="mx-auto max-w-2xl py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <span className="text-sm text-gray-500">Vajilla</span>
+          <span className="text-sm font-bold text-gray-500">Nuestros productos</span>
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {products.map((product) => (
               <div key={product.id} className="group relative max-h-[300px]  my-12">
