@@ -1,17 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
-import SideBar from "./components/SideBar";
 import Product from "./components/Product";
 import CartWithSidebar from "./components/CartWithSidebar";
+import useHandleScroll from "./hooks/useHandleScroll";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [showCartIcon, setShowCartIcon] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const footerRef = useRef(null); // Crear referencia al footer
+  const { showCartIcon, footerRef } = useHandleScroll();
+
 
   const handleSideBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -23,29 +23,6 @@ function App() {
       .then((data) => setProducts(data));
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const footerPosition =
-        footerRef.current.getBoundingClientRect().top + window.scrollY; // Obtener la posición del footer en relación al documento completo
-      const scrollPosition =
-        document.documentElement.scrollTop + window.innerHeight; // La posición de scroll más la altura de la ventana
-
-      if (
-        scrollPosition < footerPosition &&
-        document.documentElement.scrollTop > 100
-      ) {
-        setShowCartIcon(true); // Mostrar el ícono si aún no se ha llegado al footer
-      } else {
-        setShowCartIcon(false); // Ocultar el ícono si se llega al footer
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>

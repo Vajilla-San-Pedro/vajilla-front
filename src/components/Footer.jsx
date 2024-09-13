@@ -25,9 +25,9 @@ const Footer = forwardRef((props, ref)  => {
               viewBox="0 0 26 26"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
               <path
                 fillRule="evenodd"
