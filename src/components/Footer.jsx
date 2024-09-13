@@ -1,9 +1,10 @@
 import React from "react";
+import { forwardRef } from "react";
 
-const Footer = () => {
+const Footer = forwardRef((props, ref)  => {
   return (
     <>
-      <footer className="bg-white border-t border-gray-100 sm:flex sm:items-center sm:justify-between p-4 sm:p-6 xl:p-8 antialiased">
+      <footer ref = {ref} className="bg-white border-t border-gray-100 sm:flex sm:items-center sm:justify-between mt-20 p-4 sm:p-6 xl:p-8 antialiased">
         <p className="mb-4 text-sm text-center text-gray-500 sm:mb-0">
         Alquiler de vajilla y manteleria Zona Oeste
         </p>
@@ -40,6 +41,6 @@ const Footer = () => {
       </footer>
     </>
   );
-};
+});
 
 export default Footer;
