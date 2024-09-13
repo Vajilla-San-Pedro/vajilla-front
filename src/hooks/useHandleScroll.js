@@ -8,9 +8,9 @@ function useHandleScroll() {
     const handleScroll = () => {
       if (footerRef.current) {
         const footerPosition =
-          footerRef.current.getBoundingClientRect().top + window.scrollY;
+          footerRef.current.getBoundingClientRect().top + window.scrollY; // Obtener la posición del footer en relación al documento completo
         const scrollPosition =
-          document.documentElement.scrollTop + window.innerHeight;
+          document.documentElement.scrollTop + window.innerHeight; // La posición de scroll más la altura de la ventana
         setShowCartIcon(
           scrollPosition < footerPosition &&
             document.documentElement.scrollTop > 100

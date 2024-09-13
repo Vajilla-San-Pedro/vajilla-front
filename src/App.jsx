@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
@@ -13,9 +13,9 @@ function App() {
   const { showCartIcon, footerRef } = useHandleScroll();
 
 
-  const handleSideBar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const handleSideBar = useCallback(() => {
+    setIsSidebarOpen(prev => !prev);
+  }, []);
 
   useEffect(() => {
     fetch("/products.json")
