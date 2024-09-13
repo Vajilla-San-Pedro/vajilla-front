@@ -9,12 +9,46 @@ import useHandleScroll from "./hooks/useHandleScroll";
 function App() {
   const [products, setProducts] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [cart, setCart] = useState([]);
+
+  const addProduct = (product) => {
+    const productExist = cart.find((cartProduct) => cartProduct.id === product.id);
+    if (productExist) {    
+      return setCart((prev) =>
+        prev.map((cartProduct) =>
+          cartProduct.id === product.id
+            ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+            : cartProduct
+        )
+      );
+    }else {
+      setCart((prev) => [...prev, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const totalPrice = cart.reduce((total, cartProduct) => {
+    return total + (cartProduct.precio * cartProduct.quantity);
+  }, 0);  
+
+  const updateQuantity = (id, newQuantity) => {
+    if (newQuantity > 0) {
+      setCart((prev) =>
+        prev.map((cartProduct) =>
+          cartProduct.id === id
+            ? { ...cartProduct, quantity: newQuantity }
+            : cartProduct
+        )
+      );
+    }else if(newQuantity === 0){
+      setCart((prev) => prev.filter((cartProduct) => cartProduct.id !== id));
+  };
+}
+
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
-
   const handleSideBar = useCallback(() => {
-    setIsSidebarOpen(prev => !prev);
+    setIsSidebarOpen((prev) => !prev);
   }, []);
 
   useEffect(() => {
@@ -22,7 +56,6 @@ function App() {
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
-
 
   return (
     <>
@@ -35,7 +68,7 @@ function App() {
 
         <ProductList>
           {products.map((product) => (
-            <Product key={product.id} product={product} />
+            <Product key={product.id} product={product} addProduct = {addProduct} />
           ))}
         </ProductList>
 
@@ -43,6 +76,9 @@ function App() {
           isSidebarOpen={isSidebarOpen}
           handleSideBar={handleSideBar}
           showCartIcon={showCartIcon}
+          totalPrice = {totalPrice}
+          cart = {cart}
+          updateQuantity = {updateQuantity}
         />
       </div>
 
