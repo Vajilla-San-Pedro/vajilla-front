@@ -3,28 +3,28 @@
       "id": "65f8640c2c852bad105e4709",
       "nombre": "Plato Principal",
       "marca": "Olmos",
-      "precio": 250,
+      "precio": 350,
       "imagen":"./assets/platoOlmos.png"
     },
     {
       "id": "65f8640c2c852bad105e4725",
       "nombre": "Plato de postre",
       "marca": "Olmos",
-      "precio": 200,
+      "precio": 250,
       "imagen":"./assets/platopostre.png"
     },
     {
       "id": "65f8640c2c852bad105e4710",
       "nombre": "Tenedor",
       "marca": "Paris",
-      "precio": 160,
+      "precio": 180,
       "imagen":"./assets/tenedorParis.png"
     },
     {
       "id": "65f8640c2c852bad105e4711",
       "nombre": "Cuchillo",
       "marca": "Paris",
-      "precio": 160,
+      "precio": 180,
       "imagen":"./assets/cuchilloParis.png"
     },
     {
@@ -38,49 +38,49 @@
       "id": "65f8640c2c852bad105e4713",
       "nombre": "Copa de agua",
       "marca": "",
-      "precio": 180,
+      "precio": 200,
       "imagen":"./assets/copaAgua.png"
     },    
     {
       "id": "65f8640c2c852bad105e4714",
       "nombre": "Copa flauta",
       "marca": "",
-      "precio": 200,
+      "precio": 250,
       "imagen":"./assets/copaChampagne.png"
     },    
     {
       "id": "65f8640c2c852bad105e4726",
       "nombre": "Jarra de vidrio",
       "marca": "",
-      "precio": 500,
+      "precio": 600,
       "imagen":"./assets/jarraVidrio.png"
     },
     {
       "id": "65f8640c2c852bad105e4715",
       "nombre": "Mantel blanco 3mts",
       "marca": "",
-      "precio": 2500,
+      "precio": 3000,
       "imagen":"./assets/mantel.png"
     },
     {
       "id": "65f8640c2c852bad105e4716",
       "nombre": "Cubre manteles 75x75",
       "marca": "",
-      "precio": 650,
+      "precio": 850,
       "imagen":"./assets/manteles.png"
     },
     {
       "id": "65f8640c2c852bad105e4717",
       "nombre": "Servilletero",
       "marca": "",
-      "precio": 300,
+      "precio": 350,
       "imagen":"./assets/servilletero.png"
     },
     {
       "id": "65f8640c2c852bad105e4718",
       "nombre": "Hielera con pinza",
       "marca": "",
-      "precio": 500,
+      "precio": 700,
       "imagen":"./assets/hielera.png"
     },
     {
@@ -94,35 +94,35 @@
       "id": "65f8640c2c852bad105e4720",
       "nombre": "Cazuelita",
       "marca": "",
-      "precio": 220,
+      "precio": 320,
       "imagen":"./assets/cazuelita.png"
     },
     {
       "id": "65f8640c2c852bad105e4721",
       "nombre": "Salero",
       "marca": "",
-      "precio": 300,
+      "precio": 350,
       "imagen":"./assets/salero.png"
     },
     {
       "id": "65f8640c2c852bad105e4722",
       "nombre": "Cenicero",
       "marca": "",
-      "precio": 220,
+      "precio": 320,
       "imagen":"./assets/cenicero.png"
     },
     {
       "id": "65f8640c2c852bad105e4723",
       "nombre": "Bandeja de mozo",
       "marca": "",
-      "precio": 600,
+      "precio": 900,
       "imagen":"./assets/bandejamozo.png"
     },
     {
       "id": "65f8640c2c852bad105e4724",
       "nombre": "Bandeja de asado",
       "marca": "",
-      "precio": 600,
+      "precio": 900,
       "imagen":"./assets/fuente.png"
     }
     
