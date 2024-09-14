@@ -5,6 +5,7 @@ import ProductList from "./components/ProductList";
 import Product from "./components/Product";
 import CartWithSidebar from "./components/CartWithSidebar";
 import useHandleScroll from "./hooks/useHandleScroll";
+import NotificationMessage from "./components/NotificationMessage";
 
 const reducerObject = {
   ADD_PRODUCT: (state, action) => {
@@ -44,6 +45,7 @@ function App() {
   const [cart, dispatch] = useReducer(reducer, []);
   const [products, setProducts] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
 
   const totalPrice = cart.reduce((total, cartProduct) => {
     return total + cartProduct.precio * cartProduct.quantity;
@@ -51,12 +53,17 @@ function App() {
 
   const addProduct = (product) => {
     dispatch({ type: "ADD_PRODUCT", payload: { product } });
+    setNotificationMessage(
+      `${product.nombre} fue agregado al carrito con éxito!`
+    );
+    setTimeout(() => {
+      setNotificationMessage(""); 
+    }, 3000);
   };
 
   const updateQuantity = (id, quantity) => {
     dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } });
   };
-
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
@@ -73,6 +80,8 @@ function App() {
   return (
     <>
       <Header />
+
+      <NotificationMessage notificationMessage={notificationMessage} />
 
       <div className="mx-auto max-w-2xl py-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <span className="text-sm md:text-xl font-bold text-gray-500 w-full flex items-center justify-center">

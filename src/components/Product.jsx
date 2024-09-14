@@ -17,7 +17,7 @@ const Product = ({ product, addProduct }) => {
       <div className="flex justify-center mt-2">
         <button
           onClick={() => addProduct(product)}
-          className="bg-gray-400/20 w-full px-4 py-2 rounded-sm text-black"
+          className="bg-gray-400/20 w-full px-4 py-2 rounded-sm text-black  hover:bg-gray-800/20"
         >
           Agregar
         </button>
