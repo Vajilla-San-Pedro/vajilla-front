@@ -1,7 +1,6 @@
 import { IoClose } from "react-icons/io5";
 
 const SideBar = ({ isOpen, onClose, totalPrice, cart, updateQuantity }) => {
-
   const generateWhatsAppMessage = () => {
     let message = "Lista de productos en el carrito:\n\n";
     cart.forEach((product) => {
@@ -9,7 +8,7 @@ const SideBar = ({ isOpen, onClose, totalPrice, cart, updateQuantity }) => {
     });
     message += `Total: $${totalPrice}`;
 
-    return encodeURIComponent(message); 
+    return encodeURIComponent(message);
   };
 
   return (
@@ -18,11 +17,14 @@ const SideBar = ({ isOpen, onClose, totalPrice, cart, updateQuantity }) => {
         isOpen ? "translate-x-0" : "translate-x-full"
       } transition-transform duration-300`}
     >
-      <button onClick={onClose} className="absolute text-2xl top-4 left-4 ">
-        <IoClose />
-      </button>
       <div className="p-4 mt-5">
-        <h2 className="text-md font-semibold">Productos en el carrito</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-md font-semibold">Productos en el carrito</h2>
+          <button onClick={onClose} className="text-2xl">
+            <IoClose />
+          </button>
+        </div>
+
         {cart.map((product) => (
           <div
             key={product.id}
