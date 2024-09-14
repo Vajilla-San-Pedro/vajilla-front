@@ -11,14 +11,14 @@ const Product = ({ product, addProduct }) => {
         />
       </div>
       <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-sm text-gray-700">{product.nombre}</h3>
-          <p className="mt-1 text-sm text-gray-500">{product.marca}</p>
-        </div>
+        <h3 className="text-sm text-gray-700">{product.nombre}</h3>
         <p className="text-sm font-medium text-gray-900">${product.precio}</p>
       </div>
       <div className="flex justify-center mt-2">
-        <button onClick={() => addProduct(product)} className="bg-gray-400/20 w-full px-4 py-2 rounded-sm text-black">
+        <button
+          onClick={() => addProduct(product)}
+          className="bg-gray-400/20 w-full px-4 py-2 rounded-sm text-black"
+        >
           Agregar
         </button>
       </div>
