@@ -30,9 +30,16 @@ const reducerObject = {
           ? { ...item, quantity: action.payload.quantity }
           : item
       );
-    } else {
-      return state.filter((item) => item.id !== action.payload.id);
+    }else{
+      return state.map((item) =>
+        item.id === action.payload.id
+          ? { ...item, quantity: 0 }
+          : item
+      );
     }
+  },
+  DELETE_PRODUCT: (state, action) => {
+    return state.filter((item) => item.id !== action.payload.id);
   },
 };
 
@@ -64,6 +71,8 @@ function App() {
   const updateQuantity = (id, quantity) => {
     dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } });
   };
+
+  const deleteProduct = (id) => dispatch({ type: "DELETE_PRODUCT", payload: { id } });
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
@@ -105,6 +114,7 @@ function App() {
           totalPrice={totalPrice}
           cart={cart}
           updateQuantity={updateQuantity}
+          deleteProduct={deleteProduct}
         />
       </div>
 
