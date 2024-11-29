@@ -2,17 +2,17 @@ import React from "react";
 
 const Product = ({ product, addProduct }) => {
   return (
-    <div key={product.id} className="group relative max-h-[300px]  my-12">
+    <div key={product.id_product} className="group relative max-h-[300px]  my-12">
       <div className="aspect-h-1 aspect-w-1 w-full h-full overflow-hidden rounded-md bg-[#F7F7F7] lg:aspect-none group-hover:opacity-75">
         <img
-          src={product.imagen}
+          src={product.img}
           alt={product.name}
           className="h-full w-full object-contain object-center lg:h-full lg:w-full "
         />
       </div>
       <div className="mt-4 flex justify-between">
-        <h3 className="text-sm text-gray-700">{product.nombre}</h3>
-        <p className="text-sm font-medium text-gray-900">${product.precio}</p>
+        <h3 className="text-sm text-gray-700">{product.name}</h3>
+        <p className="text-sm font-medium text-gray-900">${product.price}</p>
       </div>
       <div className="flex justify-center mt-2">
         <button

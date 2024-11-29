@@ -6,15 +6,16 @@ import Product from "./components/Product";
 import CartWithSidebar from "./components/CartWithSidebar";
 import useHandleScroll from "./hooks/useHandleScroll";
 import NotificationMessage from "./components/NotificationMessage";
+import { getData } from "./service/api";
 
 const reducerObject = {
   ADD_PRODUCT: (state, action) => {
     const productExist = state.find(
-      (item) => item.id === action.payload.product.id
+      (item) => item.id_product === action.payload.product.id_product
     );
     if (productExist) {
       return state.map((item) =>
-        item.id === action.payload.product.id
+        item.id_product === action.payload.product.id_product
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
@@ -26,20 +27,18 @@ const reducerObject = {
   UPDATE_QUANTITY: (state, action) => {
     if (action.payload.quantity > 0) {
       return state.map((item) =>
-        item.id === action.payload.id
+        item.id_product=== action.payload.id_product
           ? { ...item, quantity: action.payload.quantity }
           : item
       );
-    }else{
+    } else {
       return state.map((item) =>
-        item.id === action.payload.id
-          ? { ...item, quantity: 0 }
-          : item
+        item.id_product === action.payload.id ? { ...item, quantity: 0 } : item
       );
     }
   },
   DELETE_PRODUCT: (state, action) => {
-    return state.filter((item) => item.id !== action.payload.id);
+    return state.filter((item) => item.id !== action.payload.id_product);
   },
 };
 
@@ -55,16 +54,16 @@ function App() {
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const totalPrice = cart.reduce((total, cartProduct) => {
-    return total + cartProduct.precio * cartProduct.quantity;
+    return total + cartProduct.price * cartProduct.quantity;
   }, 0);
 
   const addProduct = (product) => {
     dispatch({ type: "ADD_PRODUCT", payload: { product } });
     setNotificationMessage(
-      `${product.nombre} fue agregado al carrito con éxito!`
+      `${product.name} fue agregado al carrito con éxito!`
     );
     setTimeout(() => {
-      setNotificationMessage(""); 
+      setNotificationMessage("");
     }, 3000);
   };
 
@@ -72,7 +71,8 @@ function App() {
     dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } });
   };
 
-  const deleteProduct = (id) => dispatch({ type: "DELETE_PRODUCT", payload: { id } });
+  const deleteProduct = (id) =>
+    dispatch({ type: "DELETE_PRODUCT", payload: { id } });
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
@@ -80,10 +80,14 @@ function App() {
     setIsSidebarOpen((prev) => !prev);
   }, []);
 
+
+
   useEffect(() => {
-    fetch("/products.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
+    const fetchData = async () => {
+      const result = await getData();
+      setProducts(result);
+    };
+    fetchData();
   }, []);
 
   return (
@@ -100,7 +104,7 @@ function App() {
         <ProductList>
           {products.map((product) => (
             <Product
-              key={product.id}
+              key={product.id_product}
               product={product}
               addProduct={addProduct}
             />

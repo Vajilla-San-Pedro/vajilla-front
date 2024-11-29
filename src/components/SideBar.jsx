@@ -11,7 +11,7 @@ const SideBar = ({
   const generateWhatsAppMessage = () => {
     let message = "Lista de productos en el carrito:\n\n";
     cart.forEach((product) => {
-      message += `Producto: ${product.nombre}\nCantidad: ${product.quantity}\nPrecio Unitario: $${product.precio}\n\n`;
+      message += `Producto: ${product.name}\nCantidad: ${product.quantity}\nPrecio Unitario: $${product.price}\n\n`;
     });
     message += `Total: $${totalPrice}`;
 
@@ -37,16 +37,16 @@ const SideBar = ({
         <div className="flex-1 overflow-y-auto">
           {cart.map((product) => (
             <div
-              key={product.id}
+              key={product.id_product}
               className="flex justify-between items-center mt-4 gap-x-2"
             >
               <img
-                src={product.imagen}
-                alt={product.nombre}
+                src={product.img}
+                alt={product.name}
                 className="w-12 h-12 object-cover rounded-md"
               />
               <div className="ml-2 flex-1">
-                <h3 className="text-sm text-gray-700">{product.nombre}</h3>
+                <h3 className="text-sm text-gray-700">{product.name}</h3>
               </div>
               <input
                 type="number"
@@ -59,12 +59,12 @@ const SideBar = ({
               />
               <button
                 className="text-red-600 text-sm"
-                onClick={() => deleteProduct(product.id)}
+                onClick={() => deleteProduct(product.id_product)}
               >
                 Borrar
               </button>
               <p className="text-sm font-medium text-gray-900">
-                ${product.precio * product.quantity}
+                ${product.price * product.quantity}
               </p>
             </div>
           ))}
