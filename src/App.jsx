@@ -11,11 +11,11 @@ import { getData } from "./service/api";
 const reducerObject = {
   ADD_PRODUCT: (state, action) => {
     const productExist = state.find(
-      (item) => item.id_product === action.payload.product.id_product
+      (item) => item._id === action.payload.product._id
     );
     if (productExist) {
       return state.map((item) =>
-        item.id_product === action.payload.product.id_product
+        item._id === action.payload.product._id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
@@ -27,18 +27,18 @@ const reducerObject = {
   UPDATE_QUANTITY: (state, action) => {
     if (action.payload.quantity > 0) {
       return state.map((item) =>
-        item.id_product=== action.payload.id_product
+        item._id=== action.payload._id
           ? { ...item, quantity: action.payload.quantity }
           : item
       );
     } else {
       return state.map((item) =>
-        item.id_product === action.payload.id ? { ...item, quantity: 0 } : item
+        item._id === action.payload._id ? { ...item, quantity: 0 } : item
       );
     }
   },
   DELETE_PRODUCT: (state, action) => {
-    return state.filter((item) => item.id !== action.payload.id_product);
+    return state.filter((item) => item._id !== action.payload._id);
   },
 };
 
@@ -67,12 +67,12 @@ function App() {
     }, 3000);
   };
 
-  const updateQuantity = (id, quantity) => {
-    dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } });
+  const updateQuantity = (_id, quantity) => {
+    dispatch({ type: "UPDATE_QUANTITY", payload: { _id, quantity } });
   };
 
-  const deleteProduct = (id) =>
-    dispatch({ type: "DELETE_PRODUCT", payload: { id } });
+  const deleteProduct = (_id) =>
+    dispatch({ type: "DELETE_PRODUCT", payload: { _id } });
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
@@ -104,7 +104,7 @@ function App() {
         <ProductList>
           {products.map((product) => (
             <Product
-              key={product.id_product}
+              key={product._id}
               product={product}
               addProduct={addProduct}
             />
