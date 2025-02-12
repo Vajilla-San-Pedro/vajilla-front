@@ -2,7 +2,7 @@ import React from "react";
 
 const Product = ({ product, addProduct }) => {
   return (
-    <div key={product._id} className="group relative max-h-[300px]  my-12">
+    <div key={product.id} className="group relative max-h-[300px]  my-12">
       <div className="aspect-h-1 aspect-w-1 w-full h-full overflow-hidden rounded-md bg-[#F7F7F7] lg:aspect-none group-hover:opacity-75">
         <img
           src={product.img}

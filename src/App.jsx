@@ -104,7 +104,7 @@ function App() {
         <ProductList>
           {products.map((product) => (
             <Product
-              key={product._id}
+              key={product.id}
               product={product}
               addProduct={addProduct}
             />
