@@ -37,7 +37,7 @@ const SideBar = ({
         <div className="flex-1 overflow-y-auto">
           {cart.map((product) => (
             <div
-              key={product._id}
+              key={product.id}
               className="flex justify-between items-center mt-4 gap-x-2"
             >
               <img
@@ -53,13 +53,13 @@ const SideBar = ({
                 min="1"
                 value={product.quantity}
                 onChange={(e) =>
-                  updateQuantity(product._id, parseInt(e.target.value))
+                  updateQuantity(product.id, parseInt(e.target.value))
                 }
                 className="w-16 text-center border rounded-md flex-1"
               />
               <button
                 className="text-red-600 text-sm"
-                onClick={() => deleteProduct(product._id)}
+                onClick={() => deleteProduct(product.id)}
               >
                 Borrar
               </button>

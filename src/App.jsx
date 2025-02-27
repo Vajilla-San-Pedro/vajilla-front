@@ -11,11 +11,11 @@ import { getData } from "./service/api";
 const reducerObject = {
   ADD_PRODUCT: (state, action) => {
     const productExist = state.find(
-      (item) => item._id === action.payload.product._id
+      (item) => item.id === action.payload.product.id
     );
     if (productExist) {
       return state.map((item) =>
-        item._id === action.payload.product._id
+        item.id === action.payload.product.id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
@@ -27,7 +27,7 @@ const reducerObject = {
   UPDATE_QUANTITY: (state, action) => {
     if (action.payload.quantity > 0) {
       return state.map((item) =>
-        item._id=== action.payload._id
+        item.id=== action.payload.id
           ? { ...item, quantity: action.payload.quantity }
           : item
       );
@@ -38,7 +38,7 @@ const reducerObject = {
     }
   },
   DELETE_PRODUCT: (state, action) => {
-    return state.filter((item) => item._id !== action.payload._id);
+    return state.filter((item) => item._id !== action.payload.id);
   },
 };
 
@@ -67,12 +67,12 @@ function App() {
     }, 3000);
   };
 
-  const updateQuantity = (_id, quantity) => {
-    dispatch({ type: "UPDATE_QUANTITY", payload: { _id, quantity } });
+  const updateQuantity = (id, quantity) => {
+    dispatch({ type: "UPDATE_QUANTITY", payload: { id, quantity } });
   };
 
-  const deleteProduct = (_id) =>
-    dispatch({ type: "DELETE_PRODUCT", payload: { _id } });
+  const deleteProduct = (id) =>
+    dispatch({ type: "DELETE_PRODUCT", payload: { id } });
 
   const { showCartIcon, footerRef } = useHandleScroll();
 
@@ -86,6 +86,7 @@ function App() {
     const fetchData = async () => {
       const result = await getData();
       setProducts(result);
+      console.log(products)
     };
     fetchData();
   }, []);
