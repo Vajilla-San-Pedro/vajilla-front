@@ -12,7 +12,7 @@ const Product = ({ product, addProduct }) => {
       </div>
       <div className="mt-4 flex justify-between">
         <h3 className="text-sm text-gray-700">{product.name}</h3>
-        <p className="text-sm font-medium text-gray-900">${product.price}</p>
+        <p className="text-sm font-medium text-gray-900">{product.price}</p>
       </div>
       <div className="flex justify-center mt-2">
         <button
