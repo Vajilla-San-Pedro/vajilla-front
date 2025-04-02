@@ -18,11 +18,12 @@ const SideBar = ({
     return encodeURIComponent(message);
   };
 
+
+
   return (
     <div
-      className={`overflow-y-auto fixed z-30 top-0 right-0 h-full w-[350px] lg:w-[400px] bg-white shadow-lg transform ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300`}
+      className={`overflow-y-auto fixed z-30 top-0 right-0 h-full w-[350px] lg:w-[400px] bg-white shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300`}
     >
       <div className="p-4  flex flex-col h-full">
         {/* Header */}
@@ -64,7 +65,7 @@ const SideBar = ({
                 Borrar
               </button>
               <p className="text-sm font-medium text-gray-900">
-                ${product.price * product.quantity}
+                ${(parseFloat(product.price.replace(/[$,]/g, '')) * product.quantity).toFixed(2)}
               </p>
             </div>
           ))}

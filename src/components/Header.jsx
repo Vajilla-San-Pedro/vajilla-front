@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <>
       <div className="hidden relative h-full lg:flex justify-center items-center p-24">
+        
         <div className="z-10 text-white flex flex-col items-center justify-center">
           <div className="uppercase text-[12px] font-tertiary tracking-[6px] mb-5">
             Zona oeste- Isidro casanova
@@ -23,6 +24,7 @@ const Header = () => {
             Contactar
           </a>
         </div>
+
         <div className="absolute top-0 w-full h-full flex">
           <img
             src={bannerImage}

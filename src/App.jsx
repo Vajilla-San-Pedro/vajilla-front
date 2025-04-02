@@ -54,7 +54,8 @@ function App() {
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const totalPrice = cart.reduce((total, cartProduct) => {
-    return total + cartProduct.price * cartProduct.quantity;
+    const priceNumber = parseFloat(cartProduct.price.replace(/[$,]/g, '')); // Elimina '$' y ','  
+    return total + priceNumber * cartProduct.quantity;
   }, 0);
 
   const addProduct = (product) => {
@@ -86,9 +87,9 @@ function App() {
     const fetchData = async () => {
       const result = await getData();
       setProducts(result);
-      console.log(products)
     };
     fetchData();
+    console.log(products)
   }, []);
 
   return (
